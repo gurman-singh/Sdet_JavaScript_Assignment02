@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <Title>
+
+    </Title>
+    <script>
+function findSum(str1,str2)
+{
+   
+    if (str1.length > str2.length){
+       
+        let temp = str1
+        str1 = str2
+        str2 = temp
+ 
+    }
+        
+    let str = "";
+ 
+    // Calculate length of both string
+    let n1 = str1.length, n2 = str2.length;
+    let diff = n2 - n1;
+    // Initially take carry zero
+    let carry = 0;
+ 
+    // Traverse from end of both strings
+    for (let i=n1-1; i>=0; i--)
+    {
+        // console.log((str1.charCodeAt(i)-48),(str2.charCodeAt(i+diff)-48))
+        let sum = ((str1.charCodeAt(i)-48) +
+                (str2.charCodeAt(i+diff)-48) +
+                carry);
+        str+=(sum%10);
+        carry = Math.floor(sum/10);
+    }
+ 
+    // // Add remaining digits of str2[]
+    for (let i=n2-n1-1; i>=0; i--)
+    {
+        let sum = ((str2.charCodeAt(i)-48)+carry);
+        str+=(sum%10);
+        carry = Math.floor(sum/10);
+    }
+ 
+    // Add remaining carry
+    if (carry)
+        str+=(carry+'0');
+ 
+    // reverse resultant string
+ 
+    str = str.split("").reverse().join("");
+ 
+    return str;
+}
+ 
+// Driver code
+let str1 = "12";
+let str2 = "198111";
+document.write(findSum(str1, str2),"</br>");
+
+    </script>
+</head>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>
+Fibonacci Number
+    </title>
+    <script>
+        var m=prompt("Enter the number upto which you want to find Fibonacci series")
+        var n=m-1;
+          function fib(n) {
+    if (n <= 1)
+        return n;
+    return fib(n-1) + fib(n-2);
+}
+  
+    //function call
+    document.write(fib(n));
+    </script>
+</head>

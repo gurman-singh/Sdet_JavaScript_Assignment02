@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>
+
+    </title>
+    <script>
+        var a=+prompt("Enter nPrimes")
+        var b=+prompt("Enter startAt")
+        function getPrimes(nPrimes, startAt){
+    var ar = [];
+    
+    var i = startAt;
+    
+    while(ar.length < nPrimes)
+    {
+        if (isPrime(i))
+        {
+            ar.push(i);
+        }
+        
+        i++;
+    }
+    
+    return ar;
+}
+function isPrime(n) {
+  if (n < 2) return false;
+
+  if (n == 2) return true;
+
+  var maxDiv = Math.sqrt(n);
+
+  for (var i = 2; i <= maxDiv; i++) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+   document.write(getPrimes(a,b));
+    
+
+    </script>
+</head>

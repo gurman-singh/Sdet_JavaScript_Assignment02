@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <Title>
+
+    </Title>
+    <script>
+
+function sumStr(str){
+    let strArr = str.split(",");
+    let sum = strArr.reduce(function(total, num){
+      return parseFloat(total) + parseFloat(num);
+    });
+
+    return sum;
+}
+
+document.write(sumStr(11,12,13,14,15))
+
+    </script>
+</head>

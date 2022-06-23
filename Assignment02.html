@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>
+POSITIVE NUMBER FROM ARRAY
+    </title>
+    <script>
+
+all = prompt("Give me an array of numbers seperated by ','");
+
+var splitted = all.split`,`.map(x=>+x);
+function returner(splitted){
+    var positive = [];
+
+for(var i = 0; i < splitted.length; i++){
+    var el = splitted[i];
+    if (el >= 0){
+        positive.push(el);
+    }
+    
+}
+return positive;
+}
+
+var positive = returner(splitted);
+document.write("The Positive Array is: "+positive)
+    </script>
+</head>
